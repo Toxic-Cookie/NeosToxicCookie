@@ -23,5 +23,11 @@ namespace NeosToxicCookie.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("{a}")]
+        public string Get(string a)
+        {
+            return a;
+        }
     }
 }
