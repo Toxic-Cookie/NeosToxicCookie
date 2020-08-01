@@ -46,13 +46,13 @@ public class MathController
     }
 
     [HttpGet("/load")]
-    public string Get()
+    public TestData Load()
     {
         TestData testData = new TestData();
 
         testData = JSONManager.Deserialize<TestData>("/home/pi/DotnetProjectData/cooldata.json");
 
-        return testData.CoolString + " " + testData.CoolInt.ToString();
+        return testData;
     }
 }
 
