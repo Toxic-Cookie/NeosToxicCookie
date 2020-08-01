@@ -11,7 +11,6 @@ namespace NeosToxicCookie.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -22,12 +21,6 @@ namespace NeosToxicCookie.Controllers
                 TemperatureC = rng.Next(-20, 55),
             })
             .ToArray();
-        }
-
-        [HttpGet("{a}")]
-        public string Get(string a)
-        {
-            return a;
         }
     }
 }
