@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Newtonsoft.Json; //Access JSON serializer
+﻿using Newtonsoft.Json; //Access JSON serializer
 using System.IO; //File management
 
 /// <summary>

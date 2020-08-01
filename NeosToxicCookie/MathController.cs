@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.IO;
 
 public class MathController
@@ -40,19 +37,19 @@ public class MathController
         testData.CoolString = a;
         testData.CoolInt = b;
 
-        JSONManager.Serialize(testData, "/home/pi/DotnetProjectData/cooldata.json");
+        JSONManager.Serialize(testData, Directory.GetCurrentDirectory() + "/DotnetProjectData/cooldata.json");
 
         return "Saved: " + testData;
     }
 
     [HttpGet("/load")]
-    public TestData Load()
+    public string Load()
     {
         TestData testData = new TestData();
 
-        testData = JSONManager.Deserialize<TestData>("/home/pi/DotnetProjectData/cooldata.json");
+        testData = JSONManager.Deserialize<TestData>(Directory.GetCurrentDirectory() + "/DotnetProjectData/cooldata.json");
 
-        return testData;
+        return testData.CoolString + " " + testData.CoolInt.ToString();
     }
 }
 
