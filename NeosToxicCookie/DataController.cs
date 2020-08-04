@@ -5,7 +5,7 @@ using System.IO;
 
 public class DataController
 {
-    [HttpGet("/AddUserData/name/guid")]
+    [HttpGet("/AddUserData/{name}/{guid}")]
     public string AddUserData(string name, Guid guid)
     {
         DotnetProjectData.UserDataList = JSONManager.Deserialize<List<UserData>>(Directory.GetCurrentDirectory() + "/DotnetProjectData/UserData.json");
@@ -26,7 +26,7 @@ public class DataController
         }
     }
 
-    [HttpGet("/GetUserData/guid")]
+    [HttpGet("/GetUserData/{guid}")]
     public string GetUser(Guid guid)
     {
         DotnetProjectData.UserDataList = JSONManager.Deserialize<List<UserData>>(Directory.GetCurrentDirectory() + "/DotnetProjectData/UserData.json");
