@@ -50,4 +50,10 @@ public class DataController
 
         return "Initialized!";
     }
+
+    [HttpPost("/InitializePost")]
+    public string InitializePost(string data)
+    {
+        return data + " <- is probably null.";
+    }
 }
