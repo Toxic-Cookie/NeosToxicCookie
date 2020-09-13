@@ -52,7 +52,7 @@ public class DataController
     }
 
     [HttpPost("/InitializePost")]
-    public string InitializePost(string data)
+    public string InitializePost([FromBody]string data)
     {
         return data + " <- is probably null.";
     }
